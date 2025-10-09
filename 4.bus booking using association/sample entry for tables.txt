@@ -1,0 +1,33 @@
+Here are example data entries for your three tables (Users, Buses, and Bookings), demonstrating the one-to-many relationships established by the foreign keys in the Bookings table.
+
+1. Users Table (Parent Table)
+
+This table stores information about the customers who make bookings.
+id (PK)	name	email
+1	John Doe	john@example.com
+2	Alice Smith	alice@email.com
+3	Bob Johnson	bob@traveler.net
+
+2. Buses Table (Parent Table)
+
+This table stores details about the buses available for booking.
+id (PK)	busNumber	totalSeats	availableSeats
+1	MH12AB1234	40	38
+2	KA01CD5678	30	25
+3	UP80XX0001	50	50
+
+3. Bookings Table (Child/Junction Table)
+
+This table links a specific seat reservation to both a User and a Bus using the foreign keys (userId and busId).
+id (PK)	seatNumber	userId (FK)	busId (FK)
+1	10	1 (John Doe)	1 (MH12AB1234)
+2	25	2 (Alice Smith)	2 (KA01CD5678)
+3	11	1 (John Doe)	1 (MH12AB1234)
+4	5	3 (Bob Johnson)	2 (KA01CD5678)
+5	1	2 (Alice Smith)	1 (MH12AB1234)
+
+Relationship Demonstrations
+
+    One User to Many Bookings: User 1 (John Doe) has made three bookings (IDs 1, 3, and 5).
+
+    One Bus to Many Bookings: Bus 1 (MH12AB1234) has three bookings (IDs 1, 3, and 5).
